@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  mongo:
+    ports:
+      - 27017:27017
+
+  sqlserver:
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5434:1433"
+
+  cache:
+    ports:
+      - 127.0.0.1:6379:6379
+  
+  # ts
+  um.users.service:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - 4101:80
