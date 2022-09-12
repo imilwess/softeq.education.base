@@ -12,7 +12,6 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.UserAggregate
     {
         public User(string email, string name, string surname, string cityd, DateTime birthDate)
         {
-
             Email = email;
             Name = name;
             Surname = surname;
@@ -29,9 +28,23 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.UserAggregate
         private string CityId { get; set; }
 
         [ForeignKey("CityId")]
-        public City City { get; private set; }
+        public virtual City City { get; private set; }
 
         public DateTime BirthDate { get; private set; }
+
+        public decimal? Weight { get; private set; }
+        public decimal? Height { get; private set; }
+
+
+        public void SetWeight(decimal weight)
+        {
+            Weight = weight;
+        }
+
+        public void SetHeight(decimal height)
+        {
+            Weight = height;
+        }
 
     }
 }

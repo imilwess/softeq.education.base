@@ -1,3 +1,7 @@
+using System.Reflection;
+using MediatR;
+using Microsoft.OpenApi.Models;
+
 namespace TrialsSystem.UsersService.Api
 {
     public class Program
@@ -11,7 +15,14 @@ namespace TrialsSystem.UsersService.Api
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TrialsSystem.UsersService", Version = "v1" });
+            });
+
+            builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
 
             var app = builder.Build();
 
