@@ -1,4 +1,4 @@
-﻿namespace TrialsSystem.UsersService.Infrastructure.Models;
+﻿namespace TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
 public class AddUserResponse : AddUserRequest
 {

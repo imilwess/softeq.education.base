@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TrialsSystem.UsersService.Infrastructure.Models;
+using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
-namespace TrialsSystem.UsersService.Api.Controllers
+namespace TrialsSystem.UsersService.Api.Controllers.v1
 {
     [Route("api/v1/[controller]")]
     [ApiController]

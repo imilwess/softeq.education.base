@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrialsSystem.UsersService.Infrastructure.Models
+namespace TrialsSystem.UsersService.Infrastructure.Models.UserDTOs
 {
     public class AddUserRequest
     {
