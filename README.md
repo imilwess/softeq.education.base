@@ -74,7 +74,8 @@ FirmwareVersion:string
    - User with such email already exist
    
 15. Implement UserTaskMicroservice
-16. Use postman for test all API
+
+17. Use postman for test all API ( collection: postman/TrialsSystemCollections.postman_collection.json, env:local.postman_environment.json)
 
 # Additional tasks
 1. Implement Email validation with FluentValidation by following requirements, if email dont mach several requarmens, return all errors 
