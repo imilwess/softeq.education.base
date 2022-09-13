@@ -67,7 +67,8 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
                                                                              request.CityId,
                                                                              request.BirthDate,
                                                                              request.Weight,
-                                                                             request.Height));
+                                                                             request.Height,
+                                                                             request.GenderId));
             return Ok(response);
 
         }

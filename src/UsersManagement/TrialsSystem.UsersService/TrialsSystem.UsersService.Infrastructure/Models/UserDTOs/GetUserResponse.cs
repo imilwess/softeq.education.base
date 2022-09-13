@@ -22,6 +22,8 @@ namespace TrialsSystem.UsersService.Infrastructure.Models.UserDTOs
         public decimal? Height { get; set; }
 
         public IdNameDto City { get; set; }
+       
+        public IdNameDto Gender { get; set; }
 
     }
 }

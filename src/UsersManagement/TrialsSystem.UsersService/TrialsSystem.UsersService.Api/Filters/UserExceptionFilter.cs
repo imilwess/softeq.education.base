@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using TrialsSystem.UsersService.Api.Exceptions;
 
 namespace TrialsSystem.UsersService.Api.Filters
 {
@@ -18,6 +19,10 @@ namespace TrialsSystem.UsersService.Api.Filters
 
             switch (context.Exception)
             {
+                case TrialUserNotFondException userNotFoundexception:
+                    _logger.LogCritical("User with Id {id} not found", userNotFoundexception.Id);
+                    SetContextResult(context, new BadRequestResult());
+                    break;
                 default:
                     _logger.LogCritical("System error occurred. Message: {message}. Inner exception: {innerException}. Stack trace: {stackTrace}",
                         context.Exception.Message,

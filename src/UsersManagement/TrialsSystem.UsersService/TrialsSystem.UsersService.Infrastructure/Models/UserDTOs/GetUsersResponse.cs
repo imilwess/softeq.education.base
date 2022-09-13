@@ -20,7 +20,6 @@ namespace TrialsSystem.UsersService.Infrastructure.Models.UserDTOs
         public decimal? Weight { get; set; }
 
         public decimal? Height { get; set; }
-
         public string CityName { get; set; }
         public string CityGenderName { get; set; }
 

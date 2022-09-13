@@ -23,5 +23,7 @@ namespace TrialsSystem.UsersService.Infrastructure.Models.UserDTOs
 
         public string CityId { get; set; }
 
+        public string GenderId { get; set; }
+
     }
 }
