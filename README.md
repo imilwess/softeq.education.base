@@ -74,18 +74,32 @@ FirmwareVersion:string
    - User with such email already exist
    
 15. Implement UserTaskMicroservice
+16. Use postman for test all API
 
 # Additional tasks
-1. Implement Email validation with FluentValidation by following requirements, if email dont mach several requarmens, return array of errors 
+1. Implement Email validation with FluentValidation by following requirements, if email dont mach several requarmens, return all errors 
 
 e.g. 
 
 ```
-Email:["Email address can't end with '.' character","Email address can't contain empty spaces","domain-part too long - the maximum length is 255 characters"]
+Email:"Email address can't end with '.' character, 
+       Email address can't contain empty spaces, 
+       domain-part too long - the maximum length is 255 characters"
+       
 
 ```
 
-But if domain-part or local-part is missing don't validate them return single error,
+or 
+
+```
+Email:["Email address can't end with '.' character", 
+       "Email address can't contain empty spaces", 
+       "domain-part too long - the maximum length is 255 characters"]
+       
+
+```
+
+But if domain-part or local-part is missing don't validate them and return a single error.
 
 ### General
  - Email address cant ends with '.'
