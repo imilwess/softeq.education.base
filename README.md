@@ -65,10 +65,40 @@ FirmwareVersion:string
    - Name and Surname should not be empty or whitespace, Name!=Surname
    - Add necessary validation for CityRequest as well
 
-12.Add a new controller for CRUD operation for Device aggregate.
+12. Add a new controller with CRUD operations for Device aggregate.
 
-13. Add commands and queries using Mediatr for all CRUD api operation
-14. Add castom validation in CommandHandler for cases below, use custom Exception
+13. Add commands and queries using IMediatr for all CRUD api operation
+
+15. Add custom validation in CommandHandler for cases below, use custom Exception and use a Filter(Api/Filters) to handle and log them  
    - User not found
    - User with such email already exist
-16. 
+   
+15. Implement UserTaskMicroservice
+
+# Additional tasks
+1. Implement Email validation with FluentValidation by following requirements, if email dont mach several requarmens, return array of errors 
+
+e.g. 
+
+```
+Email:["Email address can't end with '.' character","Email address can't contain empty spaces","domain-part too long - the maximum length is 255 characters"]
+
+```
+
+But if domain-part or local-part is missing don't validate them return single error,
+
+### General
+ - Email address cant ends with '.'
+ - Email address cannot contain space
+### Local-part
+ - length should be less than 63 characters
+ - "." is not the first or last character
+ - "." shouldn't appear consecutivel
+### Domain-part
+- Ipv4 - valid
+- Ipv6 - valid
+- length should be less than 255 characters
+- can contain labels with separation ".", each label is limited to a length of 63 characters
+- top-level domain names are not all-numeric
+- hyphen is not the first or last character
+- allowed uppercase and lowercase Latin letters A to Z and a to z, digits 0 to 9
