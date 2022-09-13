@@ -3,9 +3,64 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UsersManagement", "UsersManagement", "{1F4DA570-B1A5-4CF6-9D7C-CECC36C42C92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialsSystem.UsersService", "TrialsSystem.UsersService", "{1DA348B3-7447-4227-B568-8D574099A0C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialsSystem.UsersService.Api", "UsersManagement\TrialsSystem.UsersService\TrialsSystem.UsersService.Api\TrialsSystem.UsersService.Api.csproj", "{EBA6BB00-23F7-4458-A634-D95A0D1C90DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialsSystem.UsersService.Domain", "UsersManagement\TrialsSystem.UsersService\TrialsSystem.UsersService.Domain\TrialsSystem.UsersService.Domain.csproj", "{F4D6E3A2-0CE7-448A-AAEC-6417E6C5D0C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialsSystem.UsersService.Infrastructure", "UsersManagement\TrialsSystem.UsersService\TrialsSystem.UsersService.Infrastructure\TrialsSystem.UsersService.Infrastructure.csproj", "{94A12304-E1C2-4AE0-A783-44B3BFE79F60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrialsSystem.UsersService.Tests", "UsersManagement\TrialsSystem.UsersService\TrialsSystem.UsersService.Tests\TrialsSystem.UsersService.Tests.csproj", "{932FAB2E-99D8-4194-80EF-7DCFE6665B47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialsSystem.IdentityService", "TrialsSystem.IdentityService", "{AD48D38C-0A4C-43E8-BD18-9C9A34801C87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialsSystem.UserTasksService", "TrialsSystem.UserTasksService", "{723FAAA7-1943-4C4A-B547-E0DDD0130014}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Answers", "Answers", "{B48F6B56-8931-45A1-B5E8-4D7BB308E2DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialsSystem.AnswersService", "TrialsSystem.AnswersService", "{771F0EC8-EA58-4A44-BD69-5847C0868329}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrialsSystem.QuestionnairesService", "TrialsSystem.QuestionnairesService", "{84537A08-448A-4E25-90C7-DA3A15956BBF}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBA6BB00-23F7-4458-A634-D95A0D1C90DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA6BB00-23F7-4458-A634-D95A0D1C90DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA6BB00-23F7-4458-A634-D95A0D1C90DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA6BB00-23F7-4458-A634-D95A0D1C90DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D6E3A2-0CE7-448A-AAEC-6417E6C5D0C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D6E3A2-0CE7-448A-AAEC-6417E6C5D0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D6E3A2-0CE7-448A-AAEC-6417E6C5D0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D6E3A2-0CE7-448A-AAEC-6417E6C5D0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A12304-E1C2-4AE0-A783-44B3BFE79F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A12304-E1C2-4AE0-A783-44B3BFE79F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A12304-E1C2-4AE0-A783-44B3BFE79F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A12304-E1C2-4AE0-A783-44B3BFE79F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{932FAB2E-99D8-4194-80EF-7DCFE6665B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{932FAB2E-99D8-4194-80EF-7DCFE6665B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{932FAB2E-99D8-4194-80EF-7DCFE6665B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{932FAB2E-99D8-4194-80EF-7DCFE6665B47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1DA348B3-7447-4227-B568-8D574099A0C8} = {1F4DA570-B1A5-4CF6-9D7C-CECC36C42C92}
+		{EBA6BB00-23F7-4458-A634-D95A0D1C90DC} = {1DA348B3-7447-4227-B568-8D574099A0C8}
+		{F4D6E3A2-0CE7-448A-AAEC-6417E6C5D0C7} = {1DA348B3-7447-4227-B568-8D574099A0C8}
+		{94A12304-E1C2-4AE0-A783-44B3BFE79F60} = {1DA348B3-7447-4227-B568-8D574099A0C8}
+		{932FAB2E-99D8-4194-80EF-7DCFE6665B47} = {1DA348B3-7447-4227-B568-8D574099A0C8}
+		{AD48D38C-0A4C-43E8-BD18-9C9A34801C87} = {1F4DA570-B1A5-4CF6-9D7C-CECC36C42C92}
+		{723FAAA7-1943-4C4A-B547-E0DDD0130014} = {1F4DA570-B1A5-4CF6-9D7C-CECC36C42C92}
+		{771F0EC8-EA58-4A44-BD69-5847C0868329} = {B48F6B56-8931-45A1-B5E8-4D7BB308E2DC}
+		{84537A08-448A-4E25-90C7-DA3A15956BBF} = {B48F6B56-8931-45A1-B5E8-4D7BB308E2DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1BA20357-52AA-484F-BC0C-7AD5880BBE7B}

@@ -3,16 +3,16 @@ using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
 namespace TrialsSystem.UsersService.Api.Application.Queries
 {
-    public class UsersQueryHandler : IRequestHandler<UsersQuery, GetUsersResponse>
+    public class UsersQueryHandler : IRequestHandler<UsersQuery, IEnumerable<GetUsersResponse>>
     {
         public UsersQueryHandler()
         {
 
         }
 
-        public Task<GetUsersResponse> Handle(UsersQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<GetUsersResponse>> Handle(UsersQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return new List<GetUsersResponse>();
         }
     }
 }

@@ -10,13 +10,14 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.UserAggregate
 {
     public class User : Entity
     {
-        public User(string email, string name, string surname, string cityd, DateTime birthDate)
+        public User(string email, string name, string surname, string cityd, string genderId, DateTime birthDate)
         {
             Email = email;
             Name = name;
             Surname = surname;
             CityId = cityd;
             BirthDate = BirthDate;
+            GenderId = genderId;
         }
 
         public string Email { get; private set; }
@@ -29,6 +30,11 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.UserAggregate
 
         [ForeignKey("CityId")]
         public virtual City City { get; private set; }
+
+        private string GenderId { get; set; }
+
+        [ForeignKey("GenderId")]
+        public virtual City Gender { get; private set; }
 
         public DateTime BirthDate { get; private set; }
 
@@ -43,7 +49,7 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.UserAggregate
 
         public void SetHeight(decimal height)
         {
-            Weight = height;
+            Height = height;
         }
 
     }

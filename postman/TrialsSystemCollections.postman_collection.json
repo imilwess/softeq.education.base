@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "7ca9bce1-3fe9-422b-8bb5-c35a8f9c7e80",
+		"name": "TrialsSystemCollections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "854592"
+	},
+	"item": [
+		{
+			"name": "UserManagment",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{users-url}}/api/v1/98a5eb3c-4365-403f-9c26-f5cdb8508fc2/Users",
+							"host": [
+								"{{users-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"98a5eb3c-4365-403f-9c26-f5cdb8508fc2",
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"{{$randomEmail}}\",\r\n  \"name\": \"{{$randomFirstName}}\",\r\n  \"surname\": \"{{$randomLastName}}\",\r\n  \"birthDate\": \"1991-02-25\",\r\n  \"weight\": null,\r\n  \"height\": null,\r\n  \"cityId\": \"38955a97-394e-4341-8cde-b1921e151c09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{users-url}}/api/v1/98a5eb3c-4365-403f-9c26-f5cdb8508fc2/Users",
+							"host": [
+								"{{users-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"98a5eb3c-4365-403f-9c26-f5cdb8508fc2",
+								"Users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
