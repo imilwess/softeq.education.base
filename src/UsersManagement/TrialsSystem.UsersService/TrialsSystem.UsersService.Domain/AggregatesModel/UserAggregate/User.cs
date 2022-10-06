@@ -34,7 +34,7 @@ namespace TrialsSystem.UsersService.Domain.AggregatesModel.UserAggregate
         private string GenderId { get; set; }
 
         [ForeignKey("GenderId")]
-        public virtual City Gender { get; private set; }
+        public virtual Gender Gender { get; private set; }
 
         public DateTime BirthDate { get; private set; }
 
