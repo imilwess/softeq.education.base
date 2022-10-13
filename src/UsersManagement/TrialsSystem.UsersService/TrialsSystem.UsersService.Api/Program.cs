@@ -19,6 +19,8 @@ namespace TrialsSystem.UsersService.Api
 
             builder.Services.AddControllers();
 
+            builder.Services.AddFluentValidationAutoValidation();
+
             builder.Services.AddValidatorsFromAssemblyContaining<EditUserRequestValidator>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
