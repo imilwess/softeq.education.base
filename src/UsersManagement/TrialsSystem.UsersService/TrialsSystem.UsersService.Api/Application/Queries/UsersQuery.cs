@@ -11,7 +11,7 @@ namespace TrialsSystem.UsersService.Api.Application.Queries
 
         public string? Email { get; }
 
-        public UsersQuery(int? take, int? skip, string email)
+        public UsersQuery(int? take, int? skip, string? email)
         {
             Take = take;
             Skip = skip;

@@ -16,6 +16,8 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
+        //TODO:
+        // ADD MAPPER
 
         public UsersController(IMediator mediator)
         {
@@ -52,7 +54,9 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
             [FromRoute] string userId,
             [FromRoute] string id)
         {
-            return Ok();
+            var response = await _mediator.Send(new UserQuery(id));
+
+            return Ok(response);
         }
 
 
@@ -61,14 +65,18 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PostAsync(CreateUserRequest request)
         {
-            var response = await _mediator.Send(new CreateUserCommand(request.Email,
-                                                                             request.Name,
-                                                                             request.Surname,
-                                                                             request.CityId,
-                                                                             request.BirthDate,
-                                                                             request.Weight,
-                                                                             request.Height,
-                                                                             request.GenderId));
+            var response = await _mediator.Send(
+                //TODO: USE MAPPER
+                new CreateUserCommand(
+                    request.Email,
+                    request.Name,
+                    request.Surname,
+                    request.CityId,
+                    request.BirthDate,
+                    request.Weight,
+                    request.Height,
+                    request.GenderId));
+
             return Ok(response);
 
         }
@@ -78,15 +86,27 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutAsync(string id, UpdateUserRequest request)
         {
-            return Ok();
+            var response = await _mediator.Send(
+                new UpdateUserCommand(
+                    id,
+                    request.Name,
+                    request.Surname,
+                    request.BirthDate,
+                    request.Weight,
+                    request.Height,
+                    request.CityId));
+
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> DeleteAsync(string Id)
+        public async Task<IActionResult> DeleteAsync(string id)
         {
-            return Ok();
+            var response = await _mediator.Send(new DeleteUserCommand(id));
+
+            return Ok(response);
         }
     }
 }
