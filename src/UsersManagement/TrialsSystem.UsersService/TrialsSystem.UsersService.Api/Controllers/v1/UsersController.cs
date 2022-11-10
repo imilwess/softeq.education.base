@@ -48,13 +48,13 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(GetUserResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(GetUserByIdResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetAsync(
             [FromRoute] string userId,
             [FromRoute] string id)
         {
-            var response = await _mediator.Send(new UserQuery(id));
+            var response = await _mediator.Send(new GetUserByIdQuery(id));
 
             return Ok(response);
         }

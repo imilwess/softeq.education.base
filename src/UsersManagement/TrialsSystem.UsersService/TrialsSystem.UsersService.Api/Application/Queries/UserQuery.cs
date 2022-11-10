@@ -3,11 +3,11 @@ using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 
 namespace TrialsSystem.UsersService.Api.Application.Queries
 {
-    public class UserQuery : IRequest<GetUserResponse>
+    public class GetUserByIdQuery : IRequest<GetUserByIdResponse>
     {
         public string UserId { get; set; }
 
-        public UserQuery(string userId)
+        public GetUserByIdQuery(string userId)
         {
             UserId = userId;
         }
