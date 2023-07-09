@@ -5,13 +5,13 @@ namespace TrialsSystem.UsersService.Api.Application.Commands
 {
     public class UpdateUserCommand : IRequest<UpdateUserResponse>
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public DateTime BirthDate { get; set; }
-        public decimal? Weight { get; set; }
-        public decimal? Height { get; set; }
-        public string CityId { get; set; }
+        public string Id { get; }
+        public string Name { get; }
+        public string Surname { get; }
+        public DateTime BirthDate { get; }
+        public decimal? Weight { get; }
+        public decimal? Height { get; }
+        public string CityId { get; }
 
         public UpdateUserCommand(string id, string name, string surname, DateTime birthDate, decimal? weight, decimal? height, string cityId)
         {

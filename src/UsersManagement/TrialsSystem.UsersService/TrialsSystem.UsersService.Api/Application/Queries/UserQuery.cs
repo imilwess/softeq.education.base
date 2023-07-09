@@ -5,11 +5,11 @@ namespace TrialsSystem.UsersService.Api.Application.Queries
 {
     public class GetUserByIdQuery : IRequest<GetUserByIdResponse>
     {
-        public string UserId { get; set; }
-
         public GetUserByIdQuery(string userId)
         {
             UserId = userId;
         }
+
+        public string UserId { get; }
     }
 }

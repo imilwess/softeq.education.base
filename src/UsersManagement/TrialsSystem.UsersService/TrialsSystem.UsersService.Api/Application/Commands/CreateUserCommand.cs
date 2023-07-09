@@ -25,21 +25,12 @@ namespace TrialsSystem.UsersService.Api.Application.Commands
         }
 
         public string Email { get; }
-
         public string Name { get; }
-
         public string Surname { get; }
-
         public string CityId { get; }
-
         public DateTime BirthDate { get; }
-
         public decimal? Weight { get; }
-
         public decimal? Height { get; }
-
         public string GenderId { get; }
-
-
     }
 }
