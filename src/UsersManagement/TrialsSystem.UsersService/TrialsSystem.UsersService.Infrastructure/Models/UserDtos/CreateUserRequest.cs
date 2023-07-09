@@ -2,21 +2,25 @@
 {
     public class CreateUserRequest
     {
-        public string Email { get; set; }
+        public CreateUserRequest(string email, string name, string surname, DateTime birthDate, decimal? weight, decimal? height, string cityId, string genderId)
+        {
+            Email = email;
+            Name = name;
+            Surname = surname;
+            BirthDate = birthDate;
+            Weight = weight;
+            Height = height;
+            CityId = cityId;
+            GenderId = genderId;
+        }
 
-        public string Name { get; set; }
-
-        public string Surname { get; set; }
-
-        public DateTime BirthDate { get; set; }
-
-        public decimal? Weight { get; set; }
-
-        public decimal? Height { get; set; }
-
-        public string CityId { get; set; }
-
-        public string GenderId { get; set; }
-
+        public string Email { get; }
+        public string Name { get; }
+        public string Surname { get; }
+        public DateTime BirthDate { get; }
+        public decimal? Weight { get; }
+        public decimal? Height { get; }
+        public string CityId { get; }
+        public string GenderId { get; }
     }
 }

@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TrialsSystem.UsersService.Infrastructure.Models.BaseDTO
+﻿namespace TrialsSystem.UsersService.Infrastructure.Models.BaseDTO
 {
     public class IdNameDto
     {
-        public string Id { get; set; }
+        public IdNameDto(string id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
 
-        public string Name { get; set; }
+        public string Id { get; }
+        public string Name { get; }
     }
 }

@@ -36,7 +36,6 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
         [ProducesResponseType(typeof(IEnumerable<GetUsersResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-
         public async Task<IActionResult> GetAsync(
             [FromRoute] string userId,
             [FromQuery] int? skip = 0,

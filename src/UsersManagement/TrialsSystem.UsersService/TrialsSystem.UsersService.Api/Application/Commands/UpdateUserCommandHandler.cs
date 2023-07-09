@@ -7,16 +7,8 @@ namespace TrialsSystem.UsersService.Api.Application.Commands
     {
         public async Task<UpdateUserResponse> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            var updatedUser = new UpdateUserResponse
-            {
-                Name = request.Name,
-                Surname = request.Surname,
-                BirthDate = request.BirthDate,
-                CityId = request.CityId,
-                Height = request.Height,
-                Id = request.Id,
-                Weight = request.Weight,
-            };
+            var updatedUser = new UpdateUserResponse(
+                string.Empty, request.Name, request.Surname, request.BirthDate, request.Weight, request.Height, request.CityId);
 
             return updatedUser;
         }
