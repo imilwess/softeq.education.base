@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using TrialsSystem.UsersService.Infrastructure.Models.UserDTOs;
 using MediatR;
 using TrialsSystem.UsersService.Api.Application.Commands;
@@ -16,12 +17,14 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
-        //TODO:
-        // ADD MAPPER
+        private readonly IMapper _mapper;
 
-        public UsersController(IMediator mediator)
+        public UsersController(
+            IMediator mediator,
+            IMapper mapper)
         {
             _mediator = mediator;
+            _mapper = mapper;
         }
 
         /// <summary>
@@ -64,17 +67,8 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PostAsync(CreateUserRequest request)
         {
-            var response = await _mediator.Send(
-                //TODO: USE MAPPER
-                new CreateUserCommand(
-                    request.Email,
-                    request.Name,
-                    request.Surname,
-                    request.CityId,
-                    request.BirthDate,
-                    request.Weight,
-                    request.Height,
-                    request.GenderId));
+            var command = _mapper.Map<CreateUserCommand>(request);
+            var response = await _mediator.Send(command);
 
             return Ok(response);
 
@@ -85,15 +79,8 @@ namespace TrialsSystem.UsersService.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutAsync(string id, UpdateUserRequest request)
         {
-            var response = await _mediator.Send(
-                new UpdateUserCommand(
-                    id,
-                    request.Name,
-                    request.Surname,
-                    request.BirthDate,
-                    request.Weight,
-                    request.Height,
-                    request.CityId));
+            var command = _mapper.Map<UpdateUserCommand>(request);
+            var response = await _mediator.Send(command);
 
             return Ok(response);
         }
