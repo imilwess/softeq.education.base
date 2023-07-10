@@ -2,10 +2,10 @@ using System.Reflection;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using MediatR;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using TrialsSystem.UsersService.Api.Application.Validation;
 using TrialsSystem.UsersService.Api.Filters;
+using TrialsSystem.UsersService.Api.Mapping;
 
 namespace TrialsSystem.UsersService.Api
 {
@@ -38,6 +38,13 @@ namespace TrialsSystem.UsersService.Api
 
             builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
             builder.Services.AddScoped<UserExceptionFilter>();
+
+            builder.Services.AddAutoMapper(
+                new List<Assembly>
+                {
+                    typeof(UserMappingProfile).Assembly
+                },
+                ServiceLifetime.Singleton);
 
             var app = builder.Build();
 
