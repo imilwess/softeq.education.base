@@ -4,8 +4,8 @@ namespace TrialsSystem.Shared.Domain.AggregatesModel.Base
 {
     public abstract class Enumeration : IComparable
     {
-        public abstract int Id { get; protected set; }
-        public abstract string Name { get; protected set; }
+        public int Id { get; private set; }
+        public string Name { get; private set; }
 
         public Enumeration(int id, string name) => (Id, Name) = (id, name);
 
