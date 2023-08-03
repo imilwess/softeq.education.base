@@ -1,10 +1,10 @@
 ﻿namespace TrialsSystem.Shared.Domain.AggregatesModel.Base
 {
-    public abstract class EntityBase
+    public class Entity
     {
-        public abstract string Id { get; protected set; }
-        public abstract bool IsDeleted { get; protected set; }
-        public abstract DateTime CreatedDate { get; protected set; }
-        public abstract DateTime LastModifiedDate { get; protected set; }
+        public string Id { get; protected set; }
+        public bool IsDeleted { get; protected set; }
+        public DateTime CreatedDate { get; protected set; }
+        public DateTime LastModifiedDate { get; protected set; }
     }
 }
